@@ -47,7 +47,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("timestamp", help="seconds or HH:MM:SS")
     ap.add_argument("output", help="output image path")
-    ap.add_argument("--height", type=int, default=720)
+    ap.add_argument("--height", type=int, default=1080,
+                    help="max video height to stream (e.g. 720, 1080)")
     ap.add_argument("--quality", type=int, default=2, help="ffmpeg -q:v (2=high)")
     args = ap.parse_args()
 
