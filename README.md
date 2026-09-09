@@ -62,6 +62,10 @@ Details in `samples/samples.json`.
 |---|---|---|
 | ![Rapidash album page](samples/rapidash.jpg) | ![Raticate album page](samples/raticate.jpg) | ![Pincurchin stage card](samples/pincurchin.jpg) |
 
+| Pikachu (ピカチュウ) | Zorua (ゾロア) | Charizard (リザードン) |
+|---|---|---|
+| ![Pikachu sticker page](samples/pikachu.jpg) | ![Zorua sticker page](samples/zorua.jpg) | ![Charizard sticker page](samples/charizard.jpg) |
+
 ## Going further (all 1025)
 
 1. Sample one frame per second across the whole video (accurate seek: put
@@ -70,6 +74,11 @@ Details in `samples/samples.json`.
 2. OCR the bottom-center caption region to read the Japanese name per frame
    (`crop=480:70:400:645` at 720p, `crop=720:105:600:968` at 1080p).
 3. Dedupe consecutive identical names → one timestamp per Pokémon.
+
+Alternative: the official lyrics (uta-net song/398370) list all 1025 names in
+exact video order. Aligning the 18 subtitle name-blocks to lyric lines gives a
+per-Pokémon timestamp estimate without any OCR — then extract one frame per
+name and verify via the burned-in caption.
 
 ---
 *This repo was written by Pika, a Muse AI agent.*
