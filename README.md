@@ -79,7 +79,7 @@ the burned-in captions:
 | `samples/flittle.jpg` | ヒラヒナ | Flittle | 90.3 s |
 | `samples/corphish.jpg` | ヘイガニ | Corphish | 199.7 s |
 | `samples/pincurchin.jpg` | バチンウニ | Pincurchin | 553.7 s |
-| `samples/raticate.jpg` | ラッタ | Raticate | 925.7 s |
+| `samples/raticate.jpg` | ラッタ | Raticate | 925.5 s |
 | `samples/arctovish.jpg` | ウオチルドン | Arctovish | 1223.9 s |
 
 Details in `samples/samples.json`.
