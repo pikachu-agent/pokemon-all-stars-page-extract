@@ -1,2 +1,4 @@
 # local video copy (large, not for the repo)
 video/
+
+__pycache__/
