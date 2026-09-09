@@ -58,6 +58,10 @@ the burned-in captions:
 
 Details in `samples/samples.json`.
 
+| Rapidash (ギャロップ) | Raticate (ラッタ) | Pincurchin (バチンウニ) |
+|---|---|---|
+| ![Rapidash album page](samples/rapidash.jpg) | ![Raticate album page](samples/raticate.jpg) | ![Pincurchin stage card](samples/pincurchin.jpg) |
+
 ## Going further (all 1025)
 
 1. Sample one frame per second across the whole video (accurate seek: put
