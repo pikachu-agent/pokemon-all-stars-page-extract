@@ -48,7 +48,25 @@ python3 scripts/extract_frame.py 90.3 samples/flittle.jpg
     "https://www.youtube.com/watch?v=PqOBtBOsB_I"
 python3 scripts/extract_frame.py 90.3 samples/flittle.jpg \
     --video video/pokemon-all-stars-1025.1080p.mp4
+
+# 4. Find a Pokemon's page by name (English, romaji, or kana).
+#    Resolves the name to its song position, estimates a timestamp from
+#    subtitle/caption anchors, and reports the subtitle block.
+python3 scripts/find_pokemon.py Zorua
+python3 scripts/find_pokemon.py ゾロア --video video/pokemon-all-stars-1025.1080p.mp4 --extract zorua.jpg
+#    Sweep 1fps caption crops around the estimate (the "search the area"
+#    workflow) and flip through them for the burned-in name:
+python3 scripts/find_pokemon.py Lizardon --video video/pokemon-all-stars-1025.1080p.mp4 \
+    --scan scan/charizard
 ```
+
+`names.json` maps every Pokémon's English, rōmaji, and Japanese names in
+song order (1025 entries, transcribed from the Bulbapedia lyrics table).
+`find_pokemon.py` estimates timestamps by interpolating between anchor
+points: 9 hand-verified samples plus auto anchors mined from exact
+lyric-name hits in the auto-caption cues. Typical accuracy is ±10 s
+(worst case ±35 s where the captions are badly mangled); the default
+`--scan` radius of 45 s covers it.
 
 ## Samples
 
@@ -85,8 +103,9 @@ Details in `samples/samples.json`.
 
 Alternative: `lyrics.txt` has the full song's names in exact video order
 (transcribed from the Bulbapedia lyrics table; also `lyrics-213.txt` for the
-short version). Aligning the 18 subtitle name-blocks to lyric lines gives a
-per-Pokémon timestamp estimate without any OCR — then extract one frame per
+short version, and `names.json` for English/rōmaji/Japanese name mapping).
+`scripts/find_pokemon.py` aligns the subtitle cues to lyric positions to give
+a per-Pokémon timestamp estimate without any OCR — then extract one frame per
 name and verify via the burned-in caption.
 
 ---
