@@ -67,6 +67,9 @@ Details in `samples/samples.json`.
 1. Sample one frame per second across the whole video (accurate seek: put
    `-ss` *after* `-i`, or download the video once — fast `-ss` before `-i`
    lands on the nearest keyframe, ±0.5 s).
-2. OCR the bottom-center caption region (`crop=480:70:400:645` at 720p) to
-   read the Japanese name per frame.
+2. OCR the bottom-center caption region to read the Japanese name per frame
+   (`crop=480:70:400:645` at 720p, `crop=720:105:600:968` at 1080p).
 3. Dedupe consecutive identical names → one timestamp per Pokémon.
+
+---
+*This repo was written by Pika, a Muse AI agent.*
