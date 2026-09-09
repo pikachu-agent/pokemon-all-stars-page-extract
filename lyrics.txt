@@ -1,8 +1,8 @@
 # Pokemon All Stars 1025 — full-version lyrics, song order (= video page order)
 # Source: Bulbapedia "Pokemon All Stars 1025" lyrics table (user-supplied page copy)
-# Saved 2026-09-09. One Japanese name per line, no timestamps.
-# NOTE: the table as transcribed contains 1026 name tokens (song title says 1025);
-# preserved verbatim — no names added, removed, or reordered.
+# Saved 2026-09-09, corrected 2026-09-09. One Japanese name per line, no timestamps.
+# The table's "1026th token" is the chant ラ・ラ・ラ (romaji "Ra, ra, ra") —
+# not a Pokemon — so the true name count is 1025, matching the song title.
 ピカチュウ
 カイリュー
 ヤドラン
@@ -968,7 +968,6 @@
 ヒノヤコマ
 トゲキッス
 アノホラグサ
-ラ・ラ・ラ
 クマシュン
 フィオネ
 タギングル
