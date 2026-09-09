@@ -8,6 +8,12 @@ JS challenge) and seeks with ffmpeg.
 Usage:
     python3 extract_frame.py 90.5 samples/raw/t90.jpg
     python3 extract_frame.py 00:01:30 samples/raw/t90.jpg --height 720
+    python3 extract_frame.py 90.5 samples/raw/t90.jpg --video ../video/pokemon-all-stars-1025.1080p.mp4
+
+    The --video option extracts from a local file instead of streaming.
+    Download it once with:
+        yt-dlp -f "137" -o video/pokemon-all-stars-1025.1080p.mp4 <url>
+    (video/ is gitignored; keep it out of the repo.)
 """
 
 import argparse
@@ -52,17 +58,19 @@ def main():
     ap.add_argument("output", help="output image path")
     ap.add_argument("--height", type=int, default=None,
                     help="cap video height (default: best available resolution)")
+    ap.add_argument("--video", default=None,
+                    help="local video file to extract from (default: stream from YouTube)")
     ap.add_argument("--quality", type=int, default=2, help="ffmpeg -q:v (2=high)")
     args = ap.parse_args()
 
     t = parse_ts(args.timestamp)
-    url = stream_url(args.height)
+    src = args.video if args.video else stream_url(args.height)
     os.makedirs(os.path.dirname(os.path.abspath(args.output)), exist_ok=True)
     subprocess.run(
         [
             "ffmpeg", "-y", "-v", "error",
             "-ss", str(t),
-            "-i", url,
+            "-i", src,
             "-frames:v", "1",
             "-q:v", str(args.quality),
             args.output,
