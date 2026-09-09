@@ -40,6 +40,14 @@ python3 scripts/parse_subs.py subs/PqOBtBOsB_I.ja-orig.vtt --json blocks.json
 # 3. Extract a frame at a timestamp (streams, no full download)
 export PATH="$HOME/.deno/bin:$PATH"
 python3 scripts/extract_frame.py 90.3 samples/flittle.jpg
+
+# 3b. For repeated work, download the 1080p file once (kept in video/,
+#     gitignored) and pass --video — much faster than re-streaming
+~/workspace/yt-venv/bin/yt-dlp -f "137" \
+    -o "video/pokemon-all-stars-1025.1080p.mp4" \
+    "https://www.youtube.com/watch?v=PqOBtBOsB_I"
+python3 scripts/extract_frame.py 90.3 samples/flittle.jpg \
+    --video video/pokemon-all-stars-1025.1080p.mp4
 ```
 
 ## Samples
@@ -75,8 +83,9 @@ Details in `samples/samples.json`.
    (`crop=480:70:400:645` at 720p, `crop=720:105:600:968` at 1080p).
 3. Dedupe consecutive identical names → one timestamp per Pokémon.
 
-Alternative: the official lyrics (uta-net song/398370) list all 1025 names in
-exact video order. Aligning the 18 subtitle name-blocks to lyric lines gives a
+Alternative: `lyrics.txt` has the full song's names in exact video order
+(transcribed from the Bulbapedia lyrics table; also `lyrics-213.txt` for the
+short version). Aligning the 18 subtitle name-blocks to lyric lines gives a
 per-Pokémon timestamp estimate without any OCR — then extract one frame per
 name and verify via the burned-in caption.
 
