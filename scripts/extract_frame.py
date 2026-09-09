@@ -29,11 +29,12 @@ def parse_ts(s: str) -> float:
     return float(s)
 
 
-def stream_url(height: int) -> str:
+def stream_url(height: int | None) -> str:
     env = dict(os.environ)
     env["PATH"] = os.path.expanduser("~/.deno/bin") + os.pathsep + env["PATH"]
+    fmt = "bv*/b" if height is None else f"bv*[height<={height}]/b[height<={height}]"
     out = subprocess.run(
-        [YT_DLP, "-g", "-f", f"bv*[height<={height}]/b[height<={height}]", VIDEO_URL],
+        [YT_DLP, "-g", "-f", fmt, VIDEO_URL],
         capture_output=True,
         text=True,
         env=env,
@@ -47,8 +48,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("timestamp", help="seconds or HH:MM:SS")
     ap.add_argument("output", help="output image path")
-    ap.add_argument("--height", type=int, default=1080,
-                    help="max video height to stream (e.g. 720, 1080)")
+    ap.add_argument("--height", type=int, default=None,
+                    help="cap video height (default: best available resolution)")
     ap.add_argument("--quality", type=int, default=2, help="ffmpeg -q:v (2=high)")
     args = ap.parse_args()
 
