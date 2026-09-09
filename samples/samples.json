@@ -36,8 +36,8 @@
     "file": "raticate.jpg",
     "name_en": "Raticate",
     "name_ja": "ラッタ",
-    "notes": "page also shows Rattata and Alolan Raticate",
-    "t": 925.67
+    "notes": "page also shows Rattata and Alolan Raticate; re-extracted 2026-09-09 after the original frame (t=925.67) landed on Nymble",
+    "t": 925.5
   },
   {
     "block": 17,
