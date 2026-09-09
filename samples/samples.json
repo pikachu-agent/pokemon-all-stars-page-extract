@@ -1,1 +1,74 @@
-[{"block":0,"file":"rapidash.jpg","name_en":"Rapidash","name_ja":"ギャロップ","notes":"page shows Kantonian + Galarian Rapidash and TCG cards","t":17.9},{"block":2,"file":"flittle.jpg","name_en":"Flittle","name_ja":"ヒラヒナ","notes":"","t":90.3},{"block":3,"file":"corphish.jpg","name_en":"Corphish","name_ja":"ヘイガニ","notes":"page pinned to a wall, not in the album","t":199.73},{"block":8,"file":"pincurchin.jpg","name_en":"Pincurchin","name_ja":"バチンウニ","notes":"page displayed like a stage card between curtains","t":553.73},{"block":14,"file":"raticate.jpg","name_en":"Raticate","name_ja":"ラッタ","notes":"page also shows Rattata and Alolan Raticate","t":925.67},{"block":17,"file":"arctovish.jpg","name_en":"Arctovish","name_ja":"ウオチルドン","notes":"","t":1223.93}]
+[
+  {
+    "block": 0,
+    "file": "rapidash.jpg",
+    "name_en": "Rapidash",
+    "name_ja": "ギャロップ",
+    "notes": "page shows Kantonian + Galarian Rapidash and TCG cards",
+    "t": 17.9
+  },
+  {
+    "block": 2,
+    "file": "flittle.jpg",
+    "name_en": "Flittle",
+    "name_ja": "ヒラヒナ",
+    "notes": "",
+    "t": 90.3
+  },
+  {
+    "block": 3,
+    "file": "corphish.jpg",
+    "name_en": "Corphish",
+    "name_ja": "ヘイガニ",
+    "notes": "page pinned to a wall, not in the album",
+    "t": 199.73
+  },
+  {
+    "block": 8,
+    "file": "pincurchin.jpg",
+    "name_en": "Pincurchin",
+    "name_ja": "バチンウニ",
+    "notes": "page displayed like a stage card between curtains",
+    "t": 553.73
+  },
+  {
+    "block": 14,
+    "file": "raticate.jpg",
+    "name_en": "Raticate",
+    "name_ja": "ラッタ",
+    "notes": "page also shows Rattata and Alolan Raticate",
+    "t": 925.67
+  },
+  {
+    "block": 17,
+    "file": "arctovish.jpg",
+    "name_en": "Arctovish",
+    "name_ja": "ウオチルドン",
+    "notes": "",
+    "t": 1223.93
+  },
+  {
+    "english": "pikachu",
+    "japanese": "ピカチュウ",
+    "t": 12.9,
+    "file": "pikachu.jpg",
+    "caption_ok": true,
+    "note": "first name in the song; located via ja-orig cue at 00:00:12.719"
+  },
+  {
+    "english": "charizard",
+    "japanese": "リザードン",
+    "t": 277.0,
+    "file": "charizard.jpg",
+    "caption_ok": true,
+    "note": "fire section; official lyrics order ...マグカルゴ リザードン フレフワン... aligned to ja-orig cue at 00:04:36.479"
+  },
+  {
+    "english": "zorua",
+    "japanese": "ゾロア",
+    "t": 319.0,
+    "file": "zorua.jpg",
+    "caption_ok": true,
+    "note": "dark section; official lyrics order ...サメハダー クスネ ゾロア ドドゲザン..., found by scanning caption crops"
+  }
+]
