@@ -32,7 +32,9 @@ def parse_ts(s: str) -> float:
 def stream_url(height: int | None) -> str:
     env = dict(os.environ)
     env["PATH"] = os.path.expanduser("~/.deno/bin") + os.pathsep + env["PATH"]
-    fmt = "bv*/b" if height is None else f"bv*[height<={height}]/b[height<={height}]"
+    # Prefer direct HTTPS streams; exclude HLS manifests (they 403 in ffmpeg).
+    fmt = ("bv*[protocol^=https]/b[protocol^=https]" if height is None
+           else f"bv*[height<={height}][protocol^=https]/b[height<={height}][protocol^=https]")
     out = subprocess.run(
         [YT_DLP, "-g", "-f", fmt, VIDEO_URL],
         capture_output=True,
